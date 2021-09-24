@@ -53,3 +53,9 @@ print('third')
 for i in Unique(data2, ignore_case=True):
     print(i)
 # вывод a b 
+print('fourth')
+print(data1)
+for i in Unique(data1):
+    print(i)
+# data1 = [3, 3, 3, 2, 2]
+# вывод 3 2

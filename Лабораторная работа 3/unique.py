@@ -37,7 +37,7 @@ class Unique(object):
 
 data = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
 data2 = ['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']
-# data1 = gen_random(5, 1, 3)
+data1 = gen_random(5, 1, 3)
 
 # print(data)
 #Unique(data, ignore_case=False)

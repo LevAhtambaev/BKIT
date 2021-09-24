@@ -44,9 +44,12 @@ data2 = ['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']
 print('first')
 for i in Unique(data):
     print(i)
+# вывод 1 2 
 print('second')
 for i in Unique(data2, ignore_case=False):
     print(i)
+# вывод a A b B
 print('third')
 for i in Unique(data2, ignore_case=True):
     print(i)
+# вывод a b 

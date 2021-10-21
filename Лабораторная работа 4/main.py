@@ -1,5 +1,8 @@
 from builder import Director, SuvCarBuilder, SportCarBuilder, VanCarBuilder
 from composite import ComplexPart, Part, Car
+from command import Mechanic, MechanicAssistant, Tools, AutoRepairShop, PrepareToolsCommand, RemoveToolsCommand, \
+    AssembleTiresCommand, AssembleEngineCommand, InstallEngineTransmissionCommand, InstallInteriorCommand, \
+    InstallBodyCommand
 
 if __name__ == '__main__':
     print('FIRST PATTERN: BUILDER \n')
@@ -21,3 +24,16 @@ if __name__ == '__main__':
     SUV.add_product(body)
     SUV.add_product(tires)
     print(SUV.cost())
+    print('THIRD PATTERN: COMMAND \n')
+    mechanic = Mechanic()
+    mechanic_assistant = MechanicAssistant()
+    tools = Tools()
+    auto_repair_shop = AutoRepairShop()
+    auto_repair_shop.add_command(PrepareToolsCommand(tools))
+    auto_repair_shop.add_command(AssembleTiresCommand(mechanic_assistant))
+    auto_repair_shop.add_command(AssembleEngineCommand(mechanic_assistant))
+    auto_repair_shop.add_command(InstallBodyCommand(mechanic))
+    auto_repair_shop.add_command(InstallEngineTransmissionCommand(mechanic))
+    auto_repair_shop.add_command(InstallInteriorCommand(mechanic))
+    auto_repair_shop.add_command(RemoveToolsCommand(tools))
+    auto_repair_shop.build()

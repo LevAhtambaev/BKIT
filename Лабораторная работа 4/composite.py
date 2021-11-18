@@ -21,7 +21,10 @@ class Part(IPart):
     '''
 
     def __init__(self, name: str, cost: float):
-        self.__cost = cost
+        try:
+            self.__cost = float(cost)
+        except:
+            self.__cost = 0
         self.__name = name
 
     def cost(self) -> float:

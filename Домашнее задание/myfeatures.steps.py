@@ -8,12 +8,12 @@ def first_step(context):
 
 
 @when('car_check return ok')
-def check_sneakers(context):
+def check_test1(context):
     context.a.test_1()
 
 
 @when('equipment_check return ok')
-def check_slates(context):
+def check_test2(context):
     context.a.test_2()
 
 
